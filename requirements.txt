@@ -1,4 +1,11 @@
+BeautifulSoup4
+langchain
+langchain-community
+langchain_openai 
+lxml
 openai
 pandas
 scikit-learn
 seaborn
+chromadb
+pysqlite3-binary
