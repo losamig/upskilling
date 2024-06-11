@@ -1,3 +1,4 @@
+chromadb
 BeautifulSoup4
 langchain
 langchain-community
@@ -7,5 +8,5 @@ openai
 pandas
 scikit-learn
 seaborn
-chromadb
-pysqlite3-binary
+pypdf
+pysqlite3-binary #required by chroma_db
