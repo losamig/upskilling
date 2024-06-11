@@ -1,12 +1,14 @@
 chromadb
 BeautifulSoup4
+evaluate
 langchain
 langchain-community
 langchain_openai 
 lxml
 openai
 pandas
-scikit-learn
-seaborn
 pypdf
 pysqlite3-binary #required by chroma_db
+rouge_score
+scikit-learn
+seaborn
