@@ -11,9 +11,13 @@ class CarAPI:
     def windows_position(
         self,
         action: Annotated[str, "the operation to perform on the windows"],
-        target_window: Annotated[str, "window that is targeted by the operation"],
+        target_window: Annotated[str, "window that is targeted by the operation. The valid values are front_left, front_right, rear_left, rear_right"],
     ) -> Annotated[str, "the description of the operation that has been performed"]:
-        message = f"Executing {action} on window {target_window}"
+        message = ""
+        if target_window not in ["front_left", "front_right", "rear_left", "rear_right"]:
+            message = "Invalid window name"
+        else:
+            message = f"Executing {action} on window {target_window}"
         print(message)
         return message
     
@@ -31,30 +35,26 @@ class CarAPI:
         self
     ) -> Annotated[str, "json document with the status of the car"]:
         print("Reading car status")
-        car_windows_status = {
+        car_status = {
             "car_windows_status": [
                 {
                     "window": "front_left",
                     "status": "closed",
-                    "position_percentage": 0
                 },
                 {
                     "window": "front_right",
-                    "status": "open",
-                    "position_percentage": 100
+                    "status": "closed",
                 },
                 {
                     "window": "rear_left",
-                    "status": "half_open",
-                    "position_percentage": 50
+                    "status": "open",
                 },
                 {
                     "window": "rear_right",
-                    "status": "closed",
-                    "position_percentage": 0
+                    "status": "open",
                 }
-            ]
+            ],
         }
-        return json.dumps(car_windows_status, indent=4)
+        return json.dumps(car_status, indent=4)
     
         
