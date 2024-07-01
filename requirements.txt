@@ -12,3 +12,4 @@ pysqlite3-binary #required by chroma_db
 rouge_score
 scikit-learn
 seaborn
+semantic_kernel
