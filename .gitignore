@@ -1,4 +1,7 @@
 .venv
 env
 env/
+__pycache__/
+*.py[cod]
+.cache
 chroma_db/
