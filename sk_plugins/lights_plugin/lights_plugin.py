@@ -16,11 +16,11 @@ class LightsPlugin:
         # Convert the room to the enum
         print(f"Changing light status for {room} to {new_status}")
         try:
-            room = Room[room]
+            room = Room[room.upper()]
         except:
             return f"Room {room} not found"
         try:
-            new_status = LightStatus[new_status]
+            new_status = LightStatus[new_status.upper()]
         except:
             return f"Status {new_status} not found"
         
@@ -32,7 +32,7 @@ class LightsPlugin:
                    room: Annotated[str, "the room for which to get the light status"]
     )->  Annotated[str, "the the  status of the lights of the requested room"]:        
         try:
-            room = Room[room]
+            room = Room[room.upper()]
         except:
             return f"Room {room} not found"
         return f"The lights of the room {room} are {House().status[room]}"
